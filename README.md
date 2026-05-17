@@ -66,6 +66,24 @@ npm.cmd test
 
 Tests cover password hashing/session tokens, the local AI fallback, and datastore search/insights behavior.
 
+## Deploying on Render
+
+This repo includes a root `render.yaml` Blueprint for Render. The Blueprint creates a Node web service, sets production environment variables, and mounts a persistent disk at `/var/data` so the JSON database survives restarts.
+
+Deployment steps:
+
+1. Push this repo to GitHub.
+2. In Render, create a new Blueprint instance from the GitHub repository.
+3. Set `APP_ORIGIN` to the Render service URL after the service is created.
+4. Optionally set `LLM_API_KEY` for hosted AI generation. Without it, the deterministic local AI fallback still works.
+
+Render will run:
+
+```bash
+npm install
+npm start
+```
+
 ## API Overview
 
 - `POST /api/auth/signup`
