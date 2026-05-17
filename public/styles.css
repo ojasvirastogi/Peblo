@@ -1,0 +1,409 @@
+:root {
+  color-scheme: light;
+  --ink: #192026;
+  --muted: #68727d;
+  --line: #dce3ea;
+  --panel: #ffffff;
+  --panel-soft: #f6f8fb;
+  --accent: #0f7b6c;
+  --accent-dark: #0a594f;
+  --danger: #bc3b3b;
+  --shadow: 0 18px 50px rgba(29, 42, 54, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #eef3f6;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+}
+
+.auth-copy {
+  padding: 9vh 8vw;
+  background: #123c43;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0;
+  font-size: 1.2rem;
+}
+
+.auth-copy h1 {
+  font-size: clamp(2.4rem, 5vw, 5.6rem);
+  line-height: 0.95;
+  margin: 4rem 0 1rem;
+  max-width: 720px;
+}
+
+.auth-copy p {
+  color: #c7e1e1;
+  max-width: 560px;
+  font-size: 1.05rem;
+}
+
+.auth-panel {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  width: min(440px, 100%);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  padding: 0.25rem;
+  background: var(--panel-soft);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tabs button,
+.ghost,
+.primary,
+.danger,
+.icon-btn {
+  min-height: 40px;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.tabs button {
+  background: transparent;
+  color: var(--muted);
+}
+
+.tabs button.active,
+.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.ghost {
+  background: var(--panel-soft);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.danger {
+  color: white;
+  background: var(--danger);
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.8rem 0;
+}
+
+label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 7px;
+  padding: 0.75rem;
+  color: var(--ink);
+}
+
+textarea {
+  resize: none;
+}
+
+.error {
+  color: var(--danger);
+  min-height: 1.3rem;
+  font-weight: 700;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr) 360px;
+}
+
+.sidebar,
+.details {
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.details {
+  border-right: 0;
+  border-left: 1px solid var(--line);
+}
+
+.top-row,
+.toolbar,
+.note-actions,
+.inline-row {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.top-row {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.user-chip {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.filters {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.note-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.note-card {
+  text-align: left;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.note-card.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 123, 108, 0.12);
+}
+
+.note-card strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.meta,
+.save-state {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  border-radius: 999px;
+  background: #e6f2ef;
+  color: #0e655b;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.editor {
+  padding: 1.2rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.title-input {
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-weight: 850;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.title-input:focus,
+.content-input:focus {
+  outline: none;
+}
+
+.content-input {
+  min-height: 60vh;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  line-height: 1.65;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  color: var(--muted);
+  text-align: center;
+  padding: 2rem;
+}
+
+.panel-section {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel-section h2,
+.panel-section h3 {
+  margin: 0 0 0.8rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+
+.stat {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: var(--panel-soft);
+}
+
+.stat b {
+  font-size: 1.6rem;
+  display: block;
+}
+
+.ai-box,
+.share-box {
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+
+.ai-box ul {
+  padding-left: 1.1rem;
+}
+
+.bars {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 70px 1fr 28px;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.bar span:nth-child(2) {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent) var(--value), #dbe5e9 var(--value));
+}
+
+.shared-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 6vh 1.2rem;
+}
+
+.shared-note {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: var(--shadow);
+}
+
+.shared-note h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.shared-note article {
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+@media (max-width: 1120px) {
+  .app-shell {
+    grid-template-columns: 320px minmax(0, 1fr);
+  }
+
+  .details {
+    grid-column: 1 / -1;
+    min-height: auto;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 760px) {
+  .auth-shell,
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-copy {
+    min-height: 42vh;
+  }
+
+  .sidebar,
+  .details {
+    min-height: auto;
+  }
+
+  .editor {
+    min-height: 70vh;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "peblo-ai-notes-workspace",
+  "version": "1.0.0",
+  "description": "Collaborative AI notes workspace take-home challenge for Peblo.",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "node server/index.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "notes",
+    "ai",
+    "workspace",
+    "peblo"
+  ],
+  "author": "",
+  "license": "MIT"
+}
